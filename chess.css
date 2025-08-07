@@ -1,0 +1,105 @@
+/* Base styles – mobile-first layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("img/template30transparent.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+div {
+  border: 2px;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  width: 40%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Tablet View – min-width: 772px */
+@media (min-width: 772px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div {
+    border-radius: 50%;
+    /* circular figures */
+  }
+
+  div:last-of-type {
+    grid-column: span 2;
+    /* last figure takes up both columns */
+  }
+}
+
+/* Desktop View – min-width: 992px */
+@media (min-width: 992px) {
+  div {
+    border-radius: 0;
+    /* remove circular shape */
+  }
+
+  div:nth-child(3n) {
+    grid-column: span 2;
+    /* every 3rd figure spans both columns */
+  }
+}
+
+/* Reduce Motion – user prefers less animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode – prefers dark theme 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffe066;
+  }
+
+  div {
+    background-color: #333;
+    color: #ffe066;
+    border-color: #000;
+  }
+
+  header,
+  footer {
+    background-color: #1e1e1e;
+  }
+
+  a {
+    color: #ffd700;
+  }
+}*/
